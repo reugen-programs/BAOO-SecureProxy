@@ -45,6 +45,8 @@ namespace BAOOProxy
                 Profile = ObjectOperations.ByteArrayToBase64(System.Text.Encoding.UTF8.GetBytes(Profile)),
                 Check_p = ObjectOperations.ByteArrayToBase64(ObjectOperations.ByteArrayToSHA512(System.Text.Encoding.UTF8.GetBytes(Profile)))
             };
+
+            //Profile data will always be new and unique (because it includes the date it's created) so just add NewEntry at every occurrence
             ProfileData.Add(NewEntry);
             CreateBackup();
         }
@@ -83,7 +85,9 @@ namespace BAOOProxy
                 Inventory = ObjectOperations.ByteArrayToBase64(System.Text.Encoding.UTF8.GetBytes(Inventory)),
                 Check_i = ObjectOperations.ByteArrayToBase64(ObjectOperations.ByteArrayToSHA512(System.Text.Encoding.UTF8.GetBytes(Inventory)))
             };
-            if (MaxID > 0 && InventoryData.First(x => x.ID == MaxID).Check_i != NewEntry.Check_i)
+
+            //Inventory data can be duplicate so only add NewWntry when list is empty otherwise use Check_i to check and prevent duplication
+            if (MaxID == 0 || MaxID > 0 && InventoryData.First(x => x.ID == MaxID).Check_i != NewEntry.Check_i)
             {
                 InventoryData.Add(NewEntry);
                 CreateBackup();
