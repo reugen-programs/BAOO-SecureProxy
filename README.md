@@ -70,7 +70,8 @@ The game cannot connect to the server because the server has a bad (expired) cer
 No it's fine. The communication between the game and this program will still use the unencrypted HTTP protocol. This is not a problem as the data flow is still on yor local machine. Between this program and the server however the communication will use the HTTPS protocol. So your data is securely encrypted while traveling on the internet.
 
 **What's the point of the backup function?** <br />
-Nothing much really. It's just there to backup your game progress. This backup can't be used for anything yet, but who knows what the future holds.
+Nothing much really. It's just there to backup your game progress. This backup can't be used for anything yet, but who knows what the future holds. <br />
+The backup file will be located in the "GameSave" folder next to the exe file.
 
 ---
 
