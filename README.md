@@ -54,7 +54,7 @@ The program does modify some data in the traffic. Exactly 2 things are modified 
 
 ### Questions, answers
 **What does this program do?** <br />
-It does many things. It finds your game installation, modifies the necessary game config file, optionally creates backup of your game progress but most importantly it serves as a proxy server. That means this program will stand between your game and the actual server on the internet. This program utilizes the secure HTTPS connection to the server assuring your privacy and security.
+It does many things. It finds your game installation, modifies the necessary game config file, optionally creates backup of your game progress but most importantly it serves as a proxy server. That means this program will stand between your game and the actual server on the internet and manage the communication. This program utilizes the secure HTTPS connection to the server assuring your privacy and security.
 
 **How can this program use the HTTPS connection if the game cannot?** <br />
 The game cannot connect to the server because the server has a bad (expired) certificate. The program uses its own server certificate validation method. In this method good and valid certificates are allowed through, in case they renew their server certificate. However I made one exception to allow the game server's bad certificate through. By doing so the program can utilize the data encryption provided by the HTTPS protocol. I made precautions to only accept the game server's certificate, everything else will be rejected if invalid.
