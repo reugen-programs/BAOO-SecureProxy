@@ -64,12 +64,12 @@ The program does modify some data in the traffic. Exactly 2 things are modified 
 It does many things. It finds your game installation, modifies the necessary game config file, optionally creates backup of your game progress but most importantly it serves as a proxy server. That means this program will stand between your game and the actual server on the internet and manage the communication. This program utilizes the secure HTTPS connection to the server assuring your privacy and security.
 
 **How can this program use the HTTPS connection if the game cannot?** <br />
-The game cannot connect to the server because the server has a bad (expired) certificate. The program uses its own server certificate validation method. In this method good and valid certificates are allowed through, in case they renew their server certificate. However I made one exception to allow the game server's bad certificate through. By doing so the program can utilize the data encryption provided by the HTTPS protocol. I made precautions to only accept the game server's certificate, everything else will be rejected if invalid.
+The game cannot connect to the server because the server has a bad (expired) certificate. The program uses its own server certificate validation method. In this method all good and valid certificates are allowed through, in case they renew their server certificate. However I made one exception to allow the game server's expired certificate through. By doing so the program can utilize the data encryption provided by the HTTPS protocol. I made precautions to only accept the game server's certificate, everything else will be rejected if invalid.
 
 **I checked the game's config file and it still has http. Is this bad?** <br />
 No it's fine. The communication between the game and this program will still use the unencrypted HTTP protocol. This is not a problem as the data flow is still on yor local machine. Between this program and the server however the communication will use the HTTPS protocol. So your data is securely encrypted while traveling on the internet.
 
-**What's the point of the backup function?** <br />
+**What's the point of the backup feature?** <br />
 Nothing much really. It's just there to backup your game progress. This backup can't be used for anything yet, but who knows what the future holds. <br />
 The backup file will be located in the "GameSave" folder next to the exe file.
 
