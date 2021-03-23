@@ -7,24 +7,31 @@ You need to own a copy of Batman: Arkham Origins on PC (Steam) to be able to pla
 
 #### Table of contents
 1. [Usage](#usage)
-2. [Disclosure](#disclosure)
-3. [Questions, answers](#questions-answers)
-4. [Credits, used packages](#credits-used-packages)
-5. [Contribution](#contribution)
+2. [Configuration](#configuration)
+3. [Disclosure](#disclosure)
+4. [Questions, answers](#questions-answers)
+5. [Credits, used packages](#credits-used-packages)
+6. [Contribution](#contribution)
 
 ---
 
 ### Usage
-If you wish to compile the program yourself, feel free to do so.
-I used the following command to create the exe file found in the [Releases](https://github.com/reugen-programs/BAOO-SecureProxy/releases).
-> `dotnet publish -r win-x64 -c Release -p:PublishSingleFile=true --self-contained true -p:PublishReadyToRun=true -p:PublishReadyToRunShowWarnings=true -p:PublishTrimmed=true -p:IncludeNativeLibrariesForSelfExtract=true`
-
-1. Put the "BAOOProxy.exe" file in a designated folder and run it from there. On the first run it will create a "Config" folder and a "Config.json" file.
+1. Download the "BAOO-SecureProxy.zip" from the [Latest release](https://github.com/reugen-programs/BAOO-SecureProxy/releases/latest).
+1. Extract it to anywhere. For example you can extract it even to your desktop.
+1. Run the "BAOOProxy.exe". On the first run it will create a "Config" folder and a "Config.json" file in it.
 1. If you wish to enable the "game progress backup" module then close the program, modify the config file and then restart the program.
 1. Start the game only when the program tells you that you can do so.
 1. When you are finished with the game you can close the program. However you can keep the program running if you plan to jump back into the game later.
+1. Don't forget to run the program every time before you start the game.
 
-#### Configuration
+**For advanced users:** <br />
+If you wish to compile the program yourself, feel free to do so. <br />
+I used the following command to create the exe file found in the [Releases](https://github.com/reugen-programs/BAOO-SecureProxy/releases):
+> `dotnet publish -r win-x64 -c Release -p:PublishSingleFile=true --self-contained true -p:PublishReadyToRun=true -p:PublishReadyToRunShowWarnings=true -p:PublishTrimmed=true -p:IncludeNativeLibrariesForSelfExtract=true`
+
+---
+
+### Configuration
 A default config file has the following structure:
 ```json
 {
